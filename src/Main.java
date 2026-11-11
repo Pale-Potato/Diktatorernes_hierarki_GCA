@@ -1,18 +1,18 @@
-import LeaderTypes.Leader;
-import LeaderTypes.MilitaryDictator;
-import LeaderTypes.PoliticalDictator;
+import leadertypes.Leader;
+import leadertypes.MilitaryDictator;
+import leadertypes.PoliticalDictator;
 
 import java.util.List;
 
 
 void main() {
-    List<Leader> leaders = Leader.createLeaders();
+    List<Leader> leaders = LeaderManager.createLeaders();
 
 
     //test of adding additional leaders, invalid and valid
-    Leader.addLeader((new MilitaryDictator(null, null, -10, null)), leaders);
-    Leader.addLeader((new PoliticalDictator("Carsten", "Langbordistan", 23, "srr", "sir")), leaders);
+    LeaderManager.addLeader((new MilitaryDictator(null, null, -10, null)), leaders);
+    LeaderManager.addLeader((new PoliticalDictator("Carsten", "Langbordistan", 23, "srr", "sir")), leaders);
 
 
-    Leader.performActions(leaders);
+    LeaderManager.performActions(leaders);
 }

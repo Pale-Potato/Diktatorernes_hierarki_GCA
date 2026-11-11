@@ -1,4 +1,4 @@
-package LeaderTypes;
+package leadertypes;
 
 public interface PowerActions {
     void implementPolicy();

@@ -1,4 +1,4 @@
-package LeaderTypes;
+package leadertypes;
 
 public class SocialMediaDictator extends Leader implements PowerActions {
     private String username;
@@ -13,11 +13,10 @@ public class SocialMediaDictator extends Leader implements PowerActions {
     }
 
     public void setUsername(String username) {
-        if (username != null) {
-            this.username = username;
-        } else {
-            System.out.println("Invalid username.");
+        if (username != null || username.isBlank()) {
+            throw new IllegalArgumentException("Username required");
         }
+        this.username = username;
     }
 
     @Override

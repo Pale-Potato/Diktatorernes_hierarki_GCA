@@ -1,4 +1,4 @@
-package LeaderTypes;
+package leadertypes;
 
 public class MilitaryDictator extends Leader implements PowerActions {
 
@@ -14,12 +14,12 @@ public class MilitaryDictator extends Leader implements PowerActions {
     }
 
     public void setMilitaryRank(String militaryRank) {
-        if (militaryRank != null) {
-            this.militaryRank = militaryRank;
-        } else {
-            System.out.println("Invalid rank.");
+        if (militaryRank != null || militaryRank.isBlank()) {
+            throw new IllegalArgumentException("Rank required");
         }
-    }
+        this.militaryRank = militaryRank;
+        }
+
 
     @Override
     public boolean isValid(){

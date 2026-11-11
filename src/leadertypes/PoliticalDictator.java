@@ -1,4 +1,4 @@
-package LeaderTypes;
+package leadertypes;
 
 public class PoliticalDictator extends Leader implements PowerActions {
     private String partyName;
@@ -15,11 +15,10 @@ public class PoliticalDictator extends Leader implements PowerActions {
     }
 
     public void setPartyName(String partyName) {
-        if(partyName != null) {
-            this.partyName = partyName;
-        } else {
-            System.out.println("Invalid party name.");
+        if(partyName != null || partyName.isBlank()) {
+            throw new IllegalArgumentException("Party name required");
         }
+        this.partyName = partyName;
     }
 
     public String getPartyTitle() {
@@ -27,11 +26,10 @@ public class PoliticalDictator extends Leader implements PowerActions {
     }
 
     public void setPartyTitle(String partyTitle) {
-        if (partyTitle != null) {
-            this.partyTitle = partyTitle;
-        } else {
-            System.out.println("Invalid Title.");
+        if (partyTitle != null || partyTitle.isBlank()) {
+            throw new IllegalArgumentException("Party title required");
         }
+        this.partyTitle = partyTitle;
     }
 
     @Override
